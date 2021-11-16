@@ -21,9 +21,20 @@ body{
   align-items: center;
   background: white;
 }
+.form form{
+  width: 100%;
+  height: 100%;
+  text-align: center;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 200px;
+
+  border: 1px solid;
+}
 .form .input-data{
-  position: relative;
   top: 40%;
   transform: translateY(-40%);
 
@@ -34,9 +45,10 @@ body{
   outline: none;
   border: 1.5px solid;
 }
-
+.form form .input-password{
+  margin-bottom: 15px;
+}
 .form span{
-  position: relative;
   top: 200px;
   font-size: 1rem;
 }
@@ -44,10 +56,10 @@ body{
   font-size: 1rem;
   
 }
-.form .button-google{
-  position: relative;
+.form .buttons-login{
   top: 230px;
   width: 36%;
+  margin: 10px 0;
   padding: 10px;
   text-align: center;
   font-size: 1rem;
@@ -59,11 +71,40 @@ body{
   border: none;
   border-radius: 10px;
 }
-.form .button-google:hover{
+.form .buttons-login:hover{
   cursor: pointer;
   background-color: #ca3a1a; 
 }
-.form .button-google img{
+.form .btn-google{
+  width: 36%;
+}
+.form .btn-google{
+  width: 36%;
+  margin: 10px 0;
+  background-color:  #c43211;
+  
+  border-radius: 10px;
+  padding: 7px ;
+}
+.form .btn-google button{
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.form .btn-google img{
   margin-right: 10px;
-  width: 30px;
+  width: 25px;
+}
+.form .btn-google{
+  text-decoration: none;
+  color: white;
+}
+.form .btn-google:hover{
+  cursor: pointer;
+  background-color: #ca3a1a; 
 }
