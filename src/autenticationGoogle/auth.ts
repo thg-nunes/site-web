@@ -1,6 +1,7 @@
-const Strategy = require('passport-google-oauth20').Strategy
-const passport = require('passport')
-require('dotenv').config()
+import { Strategy } from 'passport-google-oauth20'
+import passport from 'passport'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const client = process.env.CLIENT_ID
 const secret = process.env.CLIENT_SECRET
@@ -23,4 +24,4 @@ passport.deserializeUser((user, done) => {
   done(null, user)
 })
 
-module.exports = passport
+export default passport

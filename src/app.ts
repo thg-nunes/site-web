@@ -1,9 +1,9 @@
-const express = require('express')
-const path = require('path')
-const passport = require('passport')
-const session = require('express-session')
-const autentication = require('./autenticationGoogle/autentication')
-const routers = require('./routes')
+import express from 'express'
+import path from 'path'
+import passport from 'passport'
+import session from 'express-session'
+import autentication from './autenticationGoogle/autentication'
+import routers from './routes'
 const app = express()
 
 app.use(express.json())
@@ -18,4 +18,4 @@ app.use(express.static(path.join(__dirname, './public')))
 app.set('views engine', 'ejs')
 app.set('views', path.join(__dirname, './views'))
 
-module.exports = app
+export default app

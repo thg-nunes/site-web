@@ -9,8 +9,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; 
-    background: rgb(134, 67, 19);
+    padding: 0px 20px; 
+    overflow: hidden;
+    height: 50px;
+    background: rgb(27, 46, 83);
+}
+.menu .pesquisa{
+    width: 45%;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: white;
+}
+.menu .pesquisa input{
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
+
+    padding-left: 10px;
+    background-color: transparent;
+}
+.menu .links{
+    position: relative;
+    left: 4%;
 }
 
 .menu .links nav ul{
@@ -18,5 +39,33 @@
 }
 .menu .links nav ul li{
     list-style: none;
-    margin: 0 10px;
+    /* margin: 0 5px; */
+    padding: 20px;
+}
+.menu .links nav ul li:hover{
+    background: rgb(52, 83, 146);
+    cursor: pointer;
+    transition: 250ms all;
+}
+
+.menu .links nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu .dadosUser{
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+.menu .dadosUser img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.menu .dadosUser img:hover{
+    cursor: pointer ;
+    border: 2px solid rgb(0, 224, 0);
 }
