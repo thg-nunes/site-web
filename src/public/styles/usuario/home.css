@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; 
+    background: rgb(134, 67, 19);
+}
+
+.menu .links nav ul{
+    display: flex;
+}
+.menu .links nav ul li{
+    list-style: none;
+    margin: 0 10px;
+}
