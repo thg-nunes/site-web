@@ -1,3 +1,3 @@
 import app from './app'
 
-app.listen(5000, () => console.log('server runing'))
+app.listen(3000, () => console.log('server runing'))

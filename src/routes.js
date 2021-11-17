@@ -1,9 +1,7 @@
-import { Router } from 'express'
+const express = require('express').Router()
 
-const routers = Router()
-
-routers.get('/', (req, res) => {
-  res.render('index.ejs')
+express.get('/', (req, res) => {
+  res.render('./index.ejs')
 })
 
-export default routers
+module.exports = express
