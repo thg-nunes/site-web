@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cadastro</title>
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+    <link href = "https: //fonts.googleapis.com/css2? family = Roboto & display = swap "rel =" stylesheet ">
+    <link rel="stylesheet" href="styles/usuario/formCadastro.css">
+    <title>cadastro</title>
+  </head>
+  <body>
 
-  <form action="/cadastro" method="post">
-    <input type="text" name="nome" id="" placeholder="Nome">
-    <input type="text" name="email" id="" placeholder="Email">
-    <input type="password" name="senha" id="" placeholder="Senha">
-    <input type="password" name="confirmacaoDeSenha" id="" placeholder="Confirmação de Senha">
-    <input type="submit" value="Cadastrar">
-  </form>
-  
-</body>
-</html>
+    <div class="form">
+      <form action="/cadastro" method="post">
+        <input type="text" name="nome" class="input-data" id="" placeholder="Nome">
+        <input type="text" name="email" class="input-data " id="" placeholder="Email">
+        <input type="password" name="senha" class="input-data" id="" placeholder="Senha de 4 a 6 dígitos">
+        <input type="password" name="confirmacaoDeSenha" class="input-data " id="" placeholder="Confirmação de Senha">
+        <% for(let i = 0; i < err.length; i++) { %>
+          <p><%= err[i].msg %></p>
+        <% } %>
+        <input type="submit" class="btn-cadastro" value="Cadastrar" id="">
+      </form>
+  </body>
+  </html>
