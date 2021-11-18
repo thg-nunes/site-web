@@ -3,10 +3,11 @@ import path from 'path'
 import passport from 'passport'
 import session from 'express-session'
 import autentication from './autenticationGoogle/autentication'
+import bodyParser from 'body-parser'
 import routers from './routes'
 const app = express()
 
-app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session({ secret: 'Th46uN7ui', resave: false, saveUninitialized: true }))
 app.use(passport.initialize())
 app.use(passport.session())
