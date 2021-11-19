@@ -18,9 +18,14 @@
         <input type="text" name="email" class="input-data " id="" placeholder="Email">
         <input type="password" name="senha" class="input-data" id="" placeholder="Senha de 4 a 6 dígitos">
         <input type="password" name="confirmacaoDeSenha" class="input-data " id="" placeholder="Confirmação de Senha">
-        <% for(let i = 0; i < err.length; i++) { %>
-          <p><%= err[i].msg %></p>
-        <% } %>
+        <div class="errors">
+          <% for(let i = 0; i < err.length; i++) { %>
+          <li><%= err[i].msg %></li>
+          <% } %>
+          <% if(msgInfor) { %>
+            <li><%= msgInfor %></li>
+          <% } %>
+        </div>
         <input type="submit" class="btn-cadastro" value="Cadastrar" id="">
       </form>
   </body>
