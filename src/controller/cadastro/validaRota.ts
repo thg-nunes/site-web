@@ -1,8 +1,9 @@
 import { Request, Response } from 'express'
 import { validationResult, body } from 'express-validator'
-import { RowDataPacket } from 'mysql2'
+import { RowDataPacket, ResultSetHeader } from 'mysql2'
 import dataBase from '../../dataBase/dataBase'
 import protocolo from './protocolo'
+import CryptoJS from 'crypto-js'
 
 class ValidaRota {
   validar_campos: any
@@ -38,15 +39,14 @@ class ValidaRota {
 
     dataBase.query('select * from usuarios where nome = ? and email = ?', [nome, email], (err, result: RowDataPacket[]) => {
       if (!err && result.length === 0) {
-        dataBase.query('insert into usuarios set id =?, nome = ?, email = ?, senha = ?', [id, nome, email, confirmacaoDeSenha], (err, result: RowDataPacket[]) => {
-          if (!err && result.length > 0) return console.log('usuario cadastrado', result)
+        dataBase.query('insert into usuarios set id =?, nome = ?, email = ?, senha = ?', [id, nome, email, confirmacaoDeSenha], (err, result: ResultSetHeader) => {
+          if (!err && result.affectedRows === 1) return (res.render('./usuario/cadastro.ejs'))
           throw new Error('Erro interno do sistema, volte mais tarde.')
         })
       }
-      if (result.length > 0) {
-        console.log('usuario ja cadastrado, forneça nome e email diferente')
-      }
-      if (err) throw new Error('erro no sistema, volte mais tarde')
+
+      if (result.length > 0) return res.render('./usuario/cadastro.ejs', { msgInfor: 'Usuário já cadastrado, forneça nome e email diferente', err: {}, erroSistema: {} })
+      if (err) return res.render('./usuario/cadastro.ejs', { erroSistema: new Error('Erro interno do sistema, volte mais tarde.'), msgInfor: '', err: {} })
     })
   }
 }
