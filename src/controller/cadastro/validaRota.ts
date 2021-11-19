@@ -40,8 +40,8 @@ class ValidaRota {
     dataBase.query('select * from usuarios where nome = ? and email = ?', [nome, email], (err, result: RowDataPacket[]) => {
       if (!err && result.length === 0) {
         dataBase.query('insert into usuarios set id =?, nome = ?, email = ?, senha = ?', [id, nome, email, confirmacaoDeSenha], (err, result: ResultSetHeader) => {
-          if (!err && result.affectedRows === 1) return (res.render('./usuario/cadastro.ejs'))
-          throw new Error('Erro interno do sistema, volte mais tarde.')
+          if (!err && result.affectedRows === 1) return (res.render('./usuario/cadastro.ejs', { err: {} }))
+          if (err) return res.render('./usuario/cadastro.ejs', { erroSistema: new Error('Erro interno do sistema, volte mais tarde.'), msgInfor: '', err: {} })
         })
       }
 
