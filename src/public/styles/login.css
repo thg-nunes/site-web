@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+}
+body{
+  background-color: #7b3ab2;
+}
+.form{
+  width: 60%;
+  height: 100vh;
+  
+  position: relative;
+  left: 70%;
+  transform: translateX( -50%);
+
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  background: white;
+}
+.form form{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 200px;
+
+  border: 1px solid;
+}
+.form .input-data{
+  top: 40%;
+  transform: translateY(-40%);
+
+  margin-bottom: 50px;
+  
+  width: 60%;
+  padding: 10px 20px;
+  outline: none;
+  border: 1.5px solid;
+}
+.form form .input-password{
+  margin-bottom: 15px;
+}
+.form span{
+  top: 200px;
+  font-size: 1rem;
+}
+.form span a{
+  font-size: 1rem;
+  color: #0049d1;
+}
+.form .button-login{
+  top: 230px;
+  width: 36%;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  #c43211;
+  border: none;
+  border-radius: 10px;
+}
+.form .button-login:hover{
+  cursor: pointer;
+  background-color: #ca3a1a; 
+}
+.form .btn-google{
+  width: 36%;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color:  #c43211;
+  border-radius: 10px;
+}
+.form .btn-google section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 7px;
+  text-align: center;
+}
+/*.form .btn-google button{
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+} */
+.form .btn-google img{
+  /* display: block; */
+  margin-right: 10px;
+  width: 25px;
+  /* margin-left: 50%;
+  transform: translateX(-50%); */
+}
+.form .btn-google{
+  text-decoration: none;
+  color: white;
+}
+.form .btn-google:hover{
+  cursor: pointer;
+  background-color: #ca3a1a; 
+}
