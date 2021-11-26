@@ -8,9 +8,12 @@ import CryptoJS from 'crypto-js'
 class ValidaRota {
   validar_campos: any
   validar_rota: any
+  validar_login: any
+  validarResult_login: any
   constructor () {
     this.validar_campos = this.validarCampos()
     this.validar_rota = this.validaRota
+    this.validar_login = this.validarLogin()
   }
 
   private validarCampos (): any {
@@ -48,6 +51,13 @@ class ValidaRota {
       if (result.length > 0) return res.render('./usuario/cadastro.ejs', { msgInfor: 'Usuário já cadastrado, forneça nome e email diferente', err: {}, erroSistema: {} })
       if (err) return res.render('./usuario/cadastro.ejs', { erroSistema: new Error('Erro interno do sistema, volte mais tarde.'), msgInfor: '', err: {} })
     })
+  }
+
+  private validarLogin (): any {
+    return [
+      body('email', 'Email inválido.').isEmail(),
+      body('senha', 'A senha deve ter de 4 a 6 dígitos.').isLength({ min: 4, max: 6 })
+    ]
   }
 }
 
