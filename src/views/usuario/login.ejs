@@ -16,6 +16,11 @@
       <input type="text" name="email" class="input-data " placeholder="Email">
       <input type="password" name="senha" class="input-data input-password" placeholder="Senha">
       <span>Novo por aqui? <a href="/cadastro" class="cadastro">Faça seu cadastro.</a></span>
+      <div class="errors">
+        <% for(let i = 0; i < err.length; i++) { %>
+          <li><%= err[i].msg %></li>
+        <% } %>
+      </div>
       <input type="submit" value="Login" class="button-login" id="btn-login">
       <a href="/auth/google" class="btn-google">
         <section>
