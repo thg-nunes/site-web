@@ -116,3 +116,28 @@ body{
   cursor: pointer;
   background-color: #ca3a1a; 
 }
+
+
+.form form .errors{
+  width: 60%;
+  font-size: 1rem;
+  color: #ca3a1a;
+  
+  text-align: start;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.form form .errors li{
+  animation: animationErrors 1s ease forwards;
+  margin-bottom: 5px;
+}
+
+@keyframes animationErrors {
+  from{
+    margin-top: -30%;
+    opacity: .5;
+  } to{
+    margin-top: 0%;
+    opacity: 1;
+  }
+}
